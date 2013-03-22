@@ -6,18 +6,18 @@ See src/webpipes/wpecho/webpipes_echo.go for the full example
 Import Webpipes
 ---------------
 ```
-import(
-  "webpipes"
-)
+  import(
+    "webpipes"
+  )
 ```
 
 Define your function
 --------------------
 
 ```
-func EchoPipe(inputs map[string]string) (map[string]string, error) {
-  return inputs, nil
-}
+  func EchoPipe(inputs map[string]string) (map[string]string, error) {
+    return inputs, nil
+  }
 ```
 
 Create a block definition
@@ -50,6 +50,6 @@ Define a new pipe and run it
 ----------------------------
 ```
   pipe := webpipes.GoWebPipe{block, EchoPipe}
-	http.Handle("/echo", pipe)
-	err := http.ListenAndServe(":8080", nil)
+  http.Handle("/echo", pipe)
+  err := http.ListenAndServe(":8080", nil)
 ```
